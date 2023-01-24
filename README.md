@@ -3,7 +3,7 @@ Simple extensible logger for Godot 4.x
 
 ## Usage
 
-**Note**: You should add `addons/BloodyLogger/logger.gd` as Autoload
+**Note**: You should add `addons/bloody_logger/logger.gd` as Autoload
 
 Somewhere in your project you should setup loggers like this:
 
