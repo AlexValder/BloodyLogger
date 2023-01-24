@@ -1,5 +1,5 @@
 extends Writer
-
+## Default file writer that limits output to at least error messages
 
 var _mutex := Mutex.new()
 var _file: FileAccess
@@ -8,6 +8,7 @@ var _counter := 0
 var size_limit := 1024 * 1024 * 1024 # 1 GiB
 var filename: String:
     get:
+        # will return "file" in case of "file012.log" and "file.log"
         if _counter == 0:
             return filename.get_basename()
         else:
@@ -56,7 +57,7 @@ func write_stack(level: int, msg: String) -> void:
     _check_file_size()
     _mutex.unlock()
 
-
+# Checks whether it should move to another file
 func _check_file_size() -> void:
     if _file != null && _file.get_length() < size_limit:
         return

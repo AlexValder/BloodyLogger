@@ -1,5 +1,5 @@
 extends Writer
-
+## Default console writer that just calls "print" to output to "Output" tab
 
 func write(level: int, msg: String) -> void:
     if !_filter(level):

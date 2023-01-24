@@ -1,5 +1,6 @@
 extends Node
 class_name Writer
+## Please extend this file for custom loggers
 
 var template := "{YYYY}-{MM}-{DD} ({TMZ}) {hh}:{mm}:{ss}.{mmm} [{level}] {msg}"
 var min_level := BloodyLogger.TRACE
@@ -42,7 +43,7 @@ func _parse_as_template(level: int, msg: String) -> String:
         "msg" = msg,
     })
 
-
+# Adds stack trace print to output
 func _add_stack_trace(processed_template: String, skip := 0) -> String:
     var stack := get_stack()
     assert(stack.size() >= skip)
@@ -55,7 +56,7 @@ func _add_stack_trace(processed_template: String, skip := 0) -> String:
 
     return processed_template
 
-
+# Converts severity integer to its string name
 func _string_level(level: int) -> String:
     match level:
         BloodyLogger.TRACE:

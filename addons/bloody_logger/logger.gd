@@ -14,14 +14,14 @@ var _state := {
     writers = [],
 }
 
-
+# Default console writer
 static func default_console_writer() -> Writer:
     var node := Writer.new()
     var script := load("res://addons/bloody_logger/writers/console_writer.gd")
     node.set_script(script)
     return node
 
-
+# Default file writer to file
 static func default_error_file_writer(file_name := "error") -> Writer:
     var node := Writer.new()
     var script := \
@@ -31,12 +31,12 @@ static func default_error_file_writer(file_name := "error") -> Writer:
     node.min_level = ERROR
     return node
 
-
+# Add new writer
 func add_writer(writer: Writer) -> void:
     assert(writer != null)
     _state.writers.append(writer)
 
-
+# Remove all writers
 func clear_writers() -> void:
     _state.writers.clear()
 
