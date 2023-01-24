@@ -24,6 +24,7 @@ To create your own writer, you should:
 
 Please note, that you despite of presence of `_filter(int)` function, you should call it your custom overrides manually.
 
-
 ## Gallery
 
+![Console output example](img/console_output.png)
+![File output example](img/file_output.png)
