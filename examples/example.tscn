@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://doabkmdg6bxjm"]
+
+[ext_resource type="Script" path="res://examples/example.gd" id="1_6aldp"]
+
+[node name="root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6aldp")
+
+[node name="grid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -33.0
+offset_right = 53.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="trace" type="Button" parent="grid"]
+self_modulate = Color(0.756863, 0.34902, 0.917647, 1)
+layout_mode = 2
+text = "Trace"
+
+[node name="debug" type="Button" parent="grid"]
+self_modulate = Color(0.235294, 0.654902, 0.898039, 1)
+layout_mode = 2
+text = "Debug"
+
+[node name="info" type="Button" parent="grid"]
+self_modulate = Color(0.32549, 0.886275, 0.317647, 1)
+layout_mode = 2
+text = "Info"
+
+[node name="warn" type="Button" parent="grid"]
+self_modulate = Color(1, 1, 0.376471, 1)
+layout_mode = 2
+text = "Warn"
+
+[node name="error" type="Button" parent="grid"]
+self_modulate = Color(0.843137, 0.529412, 0.301961, 1)
+layout_mode = 2
+text = "Error"
+
+[node name="fatal" type="Button" parent="grid"]
+self_modulate = Color(1, 0.223529, 0.133333, 1)
+layout_mode = 2
+text = "Fatal"
+
+[node name="trace_stack" type="Button" parent="grid"]
+self_modulate = Color(0.756863, 0.34902, 0.917647, 1)
+layout_mode = 2
+text = "Trace+Stack"
+
+[node name="debug_stack" type="Button" parent="grid"]
+self_modulate = Color(0.235294, 0.654902, 0.898039, 1)
+layout_mode = 2
+text = "Debug+Stack"
+
+[node name="info_stack" type="Button" parent="grid"]
+self_modulate = Color(0.32549, 0.886275, 0.317647, 1)
+layout_mode = 2
+text = "Info+Stack"
+
+[node name="warn_stack" type="Button" parent="grid"]
+self_modulate = Color(1, 1, 0.376471, 1)
+layout_mode = 2
+text = "Warn+Stack"
+
+[node name="error_stack" type="Button" parent="grid"]
+self_modulate = Color(0.843137, 0.529412, 0.301961, 1)
+layout_mode = 2
+text = "Error+Stack"
+
+[node name="fatal_stack" type="Button" parent="grid"]
+self_modulate = Color(1, 0.223529, 0.133333, 1)
+layout_mode = 2
+text = "Fatal+Stack"
+
+[connection signal="button_up" from="grid/trace" to="." method="_on_trace_button_up"]
+[connection signal="button_up" from="grid/debug" to="." method="_on_debug_button_up"]
+[connection signal="button_up" from="grid/info" to="." method="_on_info_button_up"]
+[connection signal="button_up" from="grid/warn" to="." method="_on_warn_button_up"]
+[connection signal="button_up" from="grid/error" to="." method="_on_error_button_up"]
+[connection signal="button_up" from="grid/fatal" to="." method="_on_fatal_button_up"]
+[connection signal="button_up" from="grid/trace_stack" to="." method="_on_trace_stack_button_up"]
+[connection signal="button_up" from="grid/debug_stack" to="." method="_on_debug_stack_button_up"]
+[connection signal="button_up" from="grid/info_stack" to="." method="_on_info_stack_button_up"]
+[connection signal="button_up" from="grid/warn_stack" to="." method="_on_warn_stack_button_up"]
+[connection signal="button_up" from="grid/error_stack" to="." method="_on_error_stack_button_up"]
+[connection signal="button_up" from="grid/fatal_stack" to="." method="_on_fatal_stack_button_up"]
