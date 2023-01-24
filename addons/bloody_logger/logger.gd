@@ -28,7 +28,6 @@ static func default_error_file_writer(file_name := "error") -> Writer:
         load("res://addons/bloody_logger/writers/error_file_writer.gd")
     node.set_script(script)
     node.filename = file_name
-    node.size_limit = 100
     node.min_level = ERROR
     return node
 
